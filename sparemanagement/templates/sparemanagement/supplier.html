@@ -1,0 +1,38 @@
+{% extends "./base.html" %} 
+{% block title %}Supplier {% endblock title %}
+{% block content %}
+<div class="container mb-5">
+  <div class="mb-5">
+    <h1>Supplier</h1>
+    
+      {% comment %} ><button type="button" class="btn btn-primary" ></button></a {% endcomment %}
+   <a href="/admin/sparemanagement/supplier/add/"><h3>ADD</h3></a >
+   
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">S.I</th>
+        <th scope="col">supplier</th>
+        <th scope="col">province</th>
+        <th scope="col">city</th>
+        <th scope="col">phone number</th>
+        <th scope='col'>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for content in data %}
+      <tr>
+        <th scope="row">{{content.id}}</th>
+        <td>{{content.supplierName}}</td>
+        <td>{{content.province}}</td>
+        <td>{{content.city}}</td>
+        <td>{{content.phone_number}}</td>
+        <td><a href="/admin/sparemanagement/supplier/">Edit</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock content %}

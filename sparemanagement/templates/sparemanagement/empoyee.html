@@ -1,0 +1,44 @@
+{% extends "./base.html" %} 
+{% block title %}Employee{% endblock title %}
+
+{% block content %}
+<div class="container mb-5">
+  <div class="mb-5">
+    <h1>Employee</h1>
+    
+      {% comment %} ><button type="button" class="btn btn-primary" ></button></a {% endcomment %}
+   <a href="/admin/sparemanagement/employee/add/"><h3>ADD</h3></a >
+   
+  </div>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">S.I</th>
+        <th scope="col">Firstname</th>
+        <th scope="col">Lastname</th>
+        <th scope="col">gender</th>
+        <th scope="col">phone number</th>
+        <th scope="col">email</th>
+        <th scope="col">role</th>
+        <th scope='col'>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for content in data %}
+      <tr>
+        <th scope="row">{{content.id}}</th>
+        <td>{{content.firstname}}</td>
+        <td>{{content.lastname}}</td>
+        <td>{{content.gender}}</td>
+        <td>{{content.phone_number}}</td>
+        <td>{{content.email}}</td>
+        <td>{{content.role}}</td>
+        <td><a href="/admin/sparemanagement/employee/">Edit</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock content %}
